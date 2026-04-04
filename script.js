@@ -171,6 +171,7 @@ async function handleAnalyze() {
 
     setUiExpanded(true);
     showLoading();
+    resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     
     try {
         const response = await analyzeUrlViaAPI(url);
@@ -355,7 +356,7 @@ function displayResults(result) {
                 item.innerHTML = `
                     <div class="finding-header-row">
                         <div class="finding-type">${addTooltipsToText(escapeHtml(finding.type))}</div>
-                        <span class="finding-severity severity-${severity}" title="Severity: ${severity.charAt(0).toUpperCase() + severity.slice(1)}">${finding.points > 0 ? '!' : '✓'}</span>
+                        <span class="finding-severity severity-${severity}" title="Severity: ${severity.charAt(0).toUpperCase() + severity.slice(1)}">${finding.points > 0 ? '' : '✓'}</span>
                     </div>
                     <div class="finding-description">${addTooltipsToText(escapeHtml(finding.description))}</div>
                     <div class="finding-points"><span class="points-icon">📈</span> <span class="points-value">+${finding.points} points</span></div>
@@ -380,6 +381,9 @@ function displayResults(result) {
     if (result.recommendations && result.recommendations.length > 0) {
         displayRecommendations(result.recommendations);
     }
+
+    // Keep the summary card visible on small screens after render.
+    scoreCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 // Display Detailed Information
