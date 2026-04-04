@@ -227,6 +227,11 @@ body.ui-expanded .input-section {
     text-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
 }
 
+.score-value.score-high {
+    color: #ff6b6b;
+    text-shadow: 0 0 20px rgba(255, 51, 51, 0.35);
+}
+
 .score-max {
     font-size: 1.3rem;
     color: rgba(232, 232, 232, 0.4);
@@ -1026,6 +1031,10 @@ body.ui-expanded .info-card p {
 
     .score-value {
         font-size: 2.5rem;
+    }
+
+    .score-value.score-high {
+        text-shadow: 0 0 16px rgba(255, 51, 51, 0.3);
     }
 
     .header-content {

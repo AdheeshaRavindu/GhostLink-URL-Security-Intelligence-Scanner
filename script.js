@@ -250,12 +250,14 @@ function displayResults(result) {
     const scoreCard = document.createElement('div');
     scoreCard.className = 'score-card';
 
+    const scoreValueClass = Number(result.score) > 50 ? 'score-value score-high' : 'score-value';
+
     const scoreDisplay = `
         <div class="score-container">
             <div class="score-section-title">🛡️ Security Analysis Summary</div>
             <div class="score-explanation">GhostLink analyzed this URL for phishing, malware, security misconfigurations, and other threats.</div>
             <div class="score-display">
-                <span class="score-value">${result.score}</span>
+                <span class="${scoreValueClass}">${result.score}</span>
                 <span class="score-max">/100</span>
             </div>
             <div class="risk-badge" data-level="${riskLevelClass}">
@@ -356,7 +358,7 @@ function displayResults(result) {
                         <span class="finding-severity severity-${severity}" title="Severity: ${severity.charAt(0).toUpperCase() + severity.slice(1)}">${finding.points > 0 ? '!' : '✓'}</span>
                     </div>
                     <div class="finding-description">${addTooltipsToText(escapeHtml(finding.description))}</div>
-                    <div class="finding-points"><span class="points-icon">📉</span> <span class="points-value">-${finding.points} points</span></div>
+                    <div class="finding-points"><span class="points-icon">📈</span> <span class="points-value">+${finding.points} points</span></div>
                 `;
 
                 categoryGroup.appendChild(item);
