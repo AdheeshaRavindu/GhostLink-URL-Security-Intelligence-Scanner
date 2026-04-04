@@ -4,6 +4,13 @@ A lightweight, serverless URL security scanner that combines advanced threat det
 
 🔗 **[Live Demo](https://ghostlink-2zt.pages.dev/)**
 
+## Screenshots
+
+![GhostLink UI Screenshot 1](Screenshot%202026-04-04%20180952.png)
+![GhostLink UI Screenshot 2](Screenshot%202026-04-04%20181016.png)
+![GhostLink UI Screenshot 3](Screenshot%202026-04-04%20181039.png)
+![GhostLink UI Screenshot 4](Screenshot%202026-04-04%20181054.png)
+
 ## Features
 
 🎣 **Phishing Detection**
